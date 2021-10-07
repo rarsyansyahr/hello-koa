@@ -1,5 +1,11 @@
 const Router = require("koa-router");
-const { createPost, getPosts, getPost } = require("../services/post.service");
+const {
+  createPost,
+  getPosts,
+  getPost,
+  updatePost,
+  destroyPost,
+} = require("../services/post.service");
 
 const router = new Router({
   prefix: "/posts",
@@ -18,6 +24,16 @@ router.post("/", (ctx) => {
 router.get("/:id", (ctx) => {
   const id = ctx.params.id;
   ctx.body = getPost(id);
+});
+
+router.put("/:id", (ctx) => {
+  const id = ctx.params.id;
+  ctx.body = updatePost(id, ctx.request.body);
+});
+
+router.delete("/:id", (ctx) => {
+  const id = ctx.params.id;
+  ctx.body = destroyPost(id);
 });
 
 module.exports = router;

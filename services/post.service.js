@@ -36,8 +36,32 @@ const getPost = (id) => {
   });
 };
 
+const updatePost = (id, obj) => {
+  posts = posts.map((post) => {
+    if (post.id === id) {
+      post.name = obj.name;
+      post.description = obj.description;
+      post.date = new Date();
+    }
+
+    return post;
+  });
+
+  return posts;
+};
+
+const destroyPost = (id) => {
+  posts = posts.filter((post) => {
+    return post.id !== id;
+  });
+
+  return posts;
+};
+
 module.exports = {
   createPost,
   getPosts,
   getPost,
+  updatePost,
+  destroyPost,
 };

@@ -1,3 +1,13 @@
+GET http://localhost:3001/posts
+Content-Type: application/json
+
+###
+
+GET http://localhost:3001/posts/64f18ae0-2724-11ec-af0c-c905ef289d4e
+Content-Type: application/json
+
+###
+
 POST http://localhost:3001/posts
 Content-Type: application/json
 
@@ -5,3 +15,20 @@ Content-Type: application/json
     "name": "Laptop",
     "description": "Untuk ngoding.."
 }
+
+###
+
+PUT http://localhost:3001/posts/e6f080f0-2724-11ec-b5a7-b9f1fc5b79b4
+Content-Type: application/json
+
+{
+    "name": "Name Edittted",
+    "description": "Desc Edittedd"
+}
+
+###
+
+DELETE http://localhost:3001/posts/4946d0b0-eb54-4ffe-906d-6b1f823a475a
+Content-Type: application/json
+
+###
