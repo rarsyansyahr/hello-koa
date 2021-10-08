@@ -32,3 +32,31 @@ DELETE http://localhost:3001/posts/4946d0b0-eb54-4ffe-906d-6b1f823a475a
 Content-Type: application/json
 
 ###
+
+GET http://localhost:3001/users
+Content-Type: application/json
+
+###
+
+POST http://localhost:3001/users
+Content-Type: application/json
+
+{
+    "name": "Andy",
+    "address": "Banyumas"
+}
+
+###
+
+PUT http://localhost:3001/users/22
+Content-Type: application/json
+
+{
+    "name": "Andy Editted",
+    "address": "Banyumas Editted"
+}
+
+###
+
+DELETE http://localhost:3001/users/22
+Content-Type: application/json
